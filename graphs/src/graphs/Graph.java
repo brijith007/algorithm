@@ -14,7 +14,7 @@ public class Graph<T> {
 	 * Graph(int edges){ v= edges; adjList= new LinkedList[v]; for(int
 	 * i=0;i<v;i++){ adjList[i]= new LinkedList<>(); } }
 	 */
-	void addEdge(T source, T destination) {
+	public void addEdge(T source, T destination) {
 		LinkedList<T> edges = adjList2.get(source);
 		if (edges == null) {
 			edges = new LinkedList<>();
@@ -26,7 +26,7 @@ public class Graph<T> {
 		}
 	}
 
-	void print() {
+	public void print() {
 		/*for (int i = 0; i < v; i++) {
 			System.out.println(" ");
 			System.out.print(i + "->");
@@ -39,7 +39,9 @@ public class Graph<T> {
 			System.out.println(entry.getKey()+","+entry.getValue());
 		}
 	}
-
+    public HashMap getMap(){
+    	return adjList2;
+    }
 	public static void main(String[] args) {
 		Graph<Integer> a1 = new Graph<>();
 		a1.addEdge(0, 3);
